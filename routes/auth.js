@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 // Signup
 router.post('/signup', async (req, res) => {
   try {
+    console.log("Welcome to TODO application");
     const user = new User({ username: req.body.username, password: req.body.password });
     await user.save();
     res.status(201).json({ message: 'User created' });
